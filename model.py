@@ -93,7 +93,6 @@ class YoloV1NN(nn.Module):
 
         self.fc_layer = nn.Sequential(
             nn.Linear(in_features=SIZE * SIZE * 1024, out_features=4096),
-            nn.Dropout(),
             nn.LeakyReLU(0.1),
             nn.Linear(in_features=4096, out_features=SIZE * SIZE * (BBOX * 5 + CLASS))
         )
